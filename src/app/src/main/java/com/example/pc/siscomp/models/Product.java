@@ -22,16 +22,16 @@ public class Product {
         this.description = description;
     }
 
-    public  static ArrayList<String> getProductsAsString{
-        ArrayList<String>  p = new ArrayList<>();
+    public  static ArrayList<String> getProductsAsString() {
+        ArrayList<String>  o = new ArrayList<>();
 
-        p.add("Teclados");
-        p.add("Mause");
-        p.add("Mainboars");
-        p.add("Impresoras");
-        p.add("Monitores");
-        p.add("Laptops");
-        p.add("Cases");
-        return  p;
+        o.add("Teclados");
+        o.add("Mause");
+        o.add("Mainboars");
+        o.add("Impresoras");
+        o.add("Monitores");
+        o.add("Laptops");
+        o.add("Cases");
+        return  o;
     }
 }

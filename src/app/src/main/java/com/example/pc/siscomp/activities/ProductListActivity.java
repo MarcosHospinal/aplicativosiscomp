@@ -21,7 +21,8 @@ public class ProductListActivity extends AppCompatActivity {
 
         ArrayList<String> items = Product.getProductsAsString();
 
-        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
+        ArrayAdapter<String> itemsAdapter =
+                new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
 
         listViewProducts.setAdapter(itemsAdapter);
 

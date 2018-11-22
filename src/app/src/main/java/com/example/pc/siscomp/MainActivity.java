@@ -4,13 +4,37 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+
+import  com.example.pc.siscomp.activities.AboutUsActivity;
+import  com.example.pc.siscomp.activities.ProductListActivity;
+import com.example.pc.siscomp.generals.Settings;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button btnProducts;
+    private Button btnAboutUs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        btnProducts = (Button) findViewById(R.id.btnEnter);
+        btnAboutUs = (Button) findViewById(R.id.btnAboutUs);
+        btnProducts.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Log.i(Settings.info, "Products");
+                Intent i = new Intent(MainActivity.this, ProductListActivity.class);
+                startActivity(i);
+            }
+        });
+        btnAboutUs.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Log.i(Settings.info, "About us");
+                Intent i = new Intent(MainActivity.this, AboutUsActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     @Override
