@@ -23,14 +23,14 @@ public class MainActivity extends AppCompatActivity {
         btnAboutUs = (Button) findViewById(R.id.btnAboutUs);
         btnProducts.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Log.i(Settings.info, "Products");
+                Log.i(Settings.INFO, "Products");
                 Intent i = new Intent(MainActivity.this, ProductListActivity.class);
                 startActivity(i);
             }
         });
         btnAboutUs.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Log.i(Settings.info, "About us");
+                Log.i(Settings.INFO, "About us");
                 Intent i = new Intent(MainActivity.this, AboutUsActivity.class);
                 startActivity(i);
             }
