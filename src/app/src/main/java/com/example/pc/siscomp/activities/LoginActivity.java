@@ -23,7 +23,7 @@ import com.example.pc.siscomp.R;
 
 public class LoginActivity extends AppCompatActivity {
     private  static final String[] DUMMY_CREDENTIALS = new String[]{
-            "markoshospinal@gmail.com:abc123"
+            "abc@gmail.com:abc123","qwe@gmial.com:123456"
     };
     private UserLoginTask mAuthTask = null;
 
