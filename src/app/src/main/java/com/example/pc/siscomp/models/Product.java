@@ -26,7 +26,7 @@ public class Product {
         ArrayList<String>  o = new ArrayList<>();
 
         o.add("Teclados");
-        o.add("Mause");
+        o.add("Mauses");
         o.add("Mainboars");
         o.add("Impresoras");
         o.add("Monitores");

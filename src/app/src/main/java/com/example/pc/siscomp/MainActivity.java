@@ -8,19 +8,25 @@ import android.view.View;
 import android.widget.Button;
 
 import  com.example.pc.siscomp.activities.AboutUsActivity;
+import com.example.pc.siscomp.activities.LoginActivity;
 import  com.example.pc.siscomp.activities.ProductListActivity;
+import com.example.pc.siscomp.activities.RegisterActivity;
 import com.example.pc.siscomp.generals.Settings;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button btnProducts;
     private Button btnAboutUs;
+    private Button btnRegister;
+    private Button btnLogin;
+;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btnProducts = (Button) findViewById(R.id.btnEnter);
         btnAboutUs = (Button) findViewById(R.id.btnAboutUs);
+        btnRegister = (Button) findViewById(R.id.btnRegister);
         btnProducts.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Log.i(Settings.INFO, "Products");
@@ -35,6 +41,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(Settings.INFO, "Register");
+                Intent i = new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(i);
+            }
+        });
+
     }
 
     @Override
