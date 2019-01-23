@@ -5,7 +5,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import com.example.pc.siscomp.activities.CarActivity;
+import com.example.pc.siscomp.activities.CheckoutActivity;
 import com.example.pc.siscomp.activities.LoginActivity;
+import com.example.pc.siscomp.activities.ProductActivity;
+import com.example.pc.siscomp.activities.ProductListActivity;
+import com.example.pc.siscomp.activities.WholesaleOrderActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
     @Override

@@ -21,9 +21,11 @@ import android.widget.TextView;
 import com.example.pc.siscomp.MainActivity;
 import com.example.pc.siscomp.R;
 
+import java.util.Locale;
+
 public class LoginActivity extends AppCompatActivity {
     private  static final String[] DUMMY_CREDENTIALS = new String[]{
-            "markoshospinal@gmail.com:abc123"
+            "abc@gmail.com:abc123"
     };
     private UserLoginTask mAuthTask = null;
 
@@ -31,12 +33,15 @@ public class LoginActivity extends AppCompatActivity {
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+    private TextView txtLanguage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
+        txtLanguage = (TextView)  findViewById(R.id.txtLanguage);
+
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -48,6 +53,7 @@ public class LoginActivity extends AppCompatActivity {
                 return false;
             }
         });
+
 
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +67,13 @@ public class LoginActivity extends AppCompatActivity {
         mProgressView = findViewById(R.id.login_progress);
 
     }
+    @Override
+    public void onResume(){
+        super.onResume();
+        txtLanguage.setText(Locale.getDefault().getDisplayLanguage());
+
+    }
+
     private void attemptLogin() {
         if (mAuthTask != null) {
             return;

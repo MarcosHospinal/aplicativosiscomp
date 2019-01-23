@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".MySisComp"
@@ -29,6 +30,11 @@
         <activity
             android:name=".activities.LoginActivity"
             android:label="@string/title_activity_login" />
+        <activity android:name=".activities.ProductActivity" />
+        <activity android:name=".activities.CarActivity" />
+        <activity android:name=".activities.CheckoutActivity" />
+        <activity android:name=".activities.WholesaleOrderActivity">
+        </activity>
     </application>
 
 </manifest>
