@@ -11,6 +11,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.pc.siscomp.activities.ProductActivity;
 import com.example.pc.siscomp.activities.ProductListActivity;
+import com.example.pc.siscomp.fragments.ProductListFragment;
 import com.example.pc.siscomp.helpers.QueueUtils.QueueObject;
 
 import org.json.JSONArray;
@@ -92,6 +93,49 @@ public class Product {
 
     public static void injectProductsFromCloud(final QueueObject o,
                                                final ArrayList<Product> products,
+                                               final ProductListFragment _interface) {
+        String url = "https://reqres.in/api/products";
+        url = "http://wqre.alwaysdata.net/products.json";
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        if (response.has("data")) {
+
+                            try {
+                                JSONArray list = response.getJSONArray("data");
+                                for (int i=0; i < list.length(); i++) {
+                                    JSONObject o = list.getJSONObject(i);
+                                    products.add(new Product(o.getInt("id"),
+                                            o.getString("name"),
+                                            o.getString("description"),
+                                            o.getString("category"),
+                                            o.getString("price"),
+                                            o.getString("image")));
+                                }
+
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                            _interface.refreshList();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO: Handle error
+                        int b = 2;
+                        b += 1;
+
+                    }
+                });
+        o.addToRequestQueue(jsonObjectRequest);
+    }
+
+    public static void injectProductsFromCloud(final QueueObject o,
+                                               final ArrayList<Product> products,
                                                final ProductActivity _interface) {
         String url = "https://reqres.in/api/products";
         url = "http://wqre.alwaysdata.net/products.json";
@@ -132,6 +176,7 @@ public class Product {
                 });
         o.addToRequestQueue(jsonObjectRequest);
     }
+
 
     public static void injectProductsFromCloud(final QueueObject o,
                                                final ArrayList<Product> products,

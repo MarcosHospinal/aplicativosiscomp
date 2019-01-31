@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+<group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_baseline_home_24px"
+            android:title="Inicio" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_baseline_person_24px"
+            android:title="Mi cuenta" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_baseline_list_alt_24px"
+            android:title="Todos los pedidos" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_baseline_shopping_cart_24px"
+            android:title="Carro de compras" />
+
+    </group>
+
+    <item android:title="Comunicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_baseline_star_24px"
+                android:title="Sugerencias" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_baseline_headset_mic_24px"
+                android:title="Atencion al cliente" />
+        </menu>
+    </item>
+
+</menu>
